@@ -16,3 +16,6 @@ RUN build_packages="libmcrypt-dev libpng12-dev libfreetype6-dev libjpeg62-turbo-
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN rm -rf /var/www/* && chown www-data:www-data /var/www
+
+EXPOSE 9000
+CMD ["php-fpm"]
