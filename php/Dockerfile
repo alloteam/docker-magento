@@ -5,7 +5,7 @@ RUN apk upgrade --update && apk add \
   freetype-dev \
   libjpeg-turbo-dev \
   libltdl \
-  icu-libs \
+  icu-dev \
   libmcrypt-dev \
   libpng-dev \
   libxml2-dev \
