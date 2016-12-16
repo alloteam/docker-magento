@@ -19,4 +19,6 @@ RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
 # Time Zone
 RUN echo "date.timezone=${PHP_TIMEZONE:-UTC}" > $PHP_INI_DIR/conf.d/date_timezone.ini
 
+RUN rm -rf /var/www/* && chown www-data:www-data /var/www
+
 WORKDIR /var/www
