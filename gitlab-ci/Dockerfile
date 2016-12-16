@@ -146,7 +146,7 @@ RUN set -xe \
 	\
 	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $buildDeps
 
-COPY docker-php-ext-* docker-php-entrypoint /usr/local/bin/
+COPY docker-php-ext-* /usr/local/bin/
 
 
 ########################################
