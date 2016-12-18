@@ -17,7 +17,7 @@ RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
 # Time Zone
 RUN echo "date.timezone=${PHP_TIMEZONE:-UTC}" > $PHP_INI_DIR/conf.d/date_timezone.ini
 
-RUN wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
+RUN curl --remote-name  http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
 RUN tar xvfz ioncube_loaders_lin_x86-64.tar.gz
 RUN cp ioncube/*.so /usr/lib/php5/2*/
 RUN echo zend_extension = /usr/lib/php5/2*/ioncube_loader_lin_5.6.so > $PHP_INI_DIR/conf.d/00-ioncube.ini
