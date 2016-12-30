@@ -1,6 +1,7 @@
 FROM nginx
 
-COPY	./magento.template	/etc/nginx/conf.d/default.conf
+COPY	./default.conf	/etc/nginx/conf.d/default.conf
+COPY	./https.conf	/etc/nginx/conf.d/https.conf
 
 RUN mkdir -p /var/www && chown www-data:www-data /var/www
 
