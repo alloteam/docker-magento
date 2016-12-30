@@ -1,7 +1,7 @@
 FROM nginx
 
-COPY	./default.conf	/etc/nginx/conf.d/default.conf
-COPY	./https.conf	/etc/nginx/conf.d/https.conf
+COPY	./default.conf	/etc/nginx/conf.d/001-default.conf
+COPY	./https.conf	/etc/nginx/conf.d/000-https.conf
 
 RUN mkdir -p /var/www && chown www-data:www-data /var/www
 
