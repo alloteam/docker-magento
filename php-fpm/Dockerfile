@@ -8,13 +8,14 @@ RUN apt-get update && apt-get install -y \
         libxml2-dev \
         libicu-dev \
         libxslt1-dev \
+        libexif-dev \
         nodejs \
     && ln -s /usr/bin/nodejs /usr/bin/node \
     && apt-get install -y npm \
     && npm update -g npm && npm install -g grunt-cli && npm install -g gulp \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure hash --with-mhash \
-    && docker-php-ext-install -j$(nproc) mcrypt intl xsl gd zip pdo_mysql opcache soap bcmath json iconv mbstring pcntl
+    && docker-php-ext-install -j$(nproc) exif mcrypt intl xsl gd zip pdo_mysql opcache soap bcmath json iconv mbstring pcntl
 
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
