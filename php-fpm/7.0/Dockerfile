@@ -53,14 +53,6 @@ RUN apt-get update && apt-get install -y \
         /usr/share/doc/* /usr/share/groff/* /usr/share/info/* /usr/share/linda/* \
         /usr/share/lintian/* /usr/share/locale/* /usr/share/man/*
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-    && apt-get update && apt-get install -y \
-        nodejs \
-    && npm update -g npm && npm install -g grunt-cli && npm install -g gulp \
-    && apt-get clean && apt-get --yes --quiet autoremove --purge \
-    && rm -rf  /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-        /usr/share/doc/* /usr/share/groff/* /usr/share/info/* /usr/share/linda/* \
-        /usr/share/lintian/* /usr/share/locale/* /usr/share/man/*
 
 # Memory Limit
 RUN echo "memory_limit=-1" > $PHP_INI_DIR/conf.d/memory-limit.ini
